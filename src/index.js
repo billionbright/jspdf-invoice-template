@@ -11,138 +11,139 @@ const OutputType = {
 
 export { OutputType, jsPDF };
 function jsPDFInvoiceTemplate(props) {
-  const param = {
-    outputType: props.outputType || "save",
-    returnJsPDFDocObject: props.returnJsPDFDocObject || false,
-    fileName: props.fileName || "",
-    orientationLandscape: props.orientationLandscape || false,
-    logo: {
-      src: props.logo?.src || "",
-      width: props.logo?.width || "",
-      height: props.logo?.height || "",
-      margin: {
-        top: props.logo?.margin?.top || 0,
-        left: props.logo?.margin?.left || 0,
-      },
-    },
-    business: {
-      name: props.business?.name || "",
-      address: props.business?.address || "",
-      phone: props.business?.phone || "",
-      email: props.business?.email || "",
-      email_1: props.business?.email_1 || "",
-      website: props.business?.website || "",
-    },
-    contact: {
-      label: props.contact?.label || "",
-      name: props.contact?.name || "",
-      address: props.contact?.address || "",
-      phone: props.contact?.phone || "",
-      email: props.contact?.email || "",
-      otherInfo: props.contact?.otherInfo || "",
-    },
-    invoice: {
-      label: props.invoice?.label || "",
-      invTotalLabel: props.invoice?.invTotalLabel || "",
-      num: props.invoice?.num || "",
-      invDate: props.invoice?.invDate || "",
-      invGenDate: props.invoice?.invGenDate || "",
-      headerBorder: props.invoice?.headerBorder || false,
-      tableBodyBorder: props.invoice?.tableBodyBorder || false,
-      header: props.invoice?.header || [],
-      table: props.invoice?.table || [],
-      invTotal: props.invoice?.invTotal || "",
-      invCurrency: props.invoice?.invCurrency || "",
-      invDescLabel: props.invoice?.invDescLabel || "",
-      invDesc: props.invoice?.invDesc || "",
-      row1: {
-        col1: props.invoice?.row1?.col1 || "",
-        col2: props.invoice?.row1?.col2 || "",
-        col3: props.invoice?.row1?.col3 || "",
-        style: {
-          fontSize: props.invoice?.row1?.style?.fontSize || 12,
-        },
-      },
-      row2: {
-        col1: props.invoice?.row2?.col1 || "",
-        col2: props.invoice?.row2?.col2 || "",
-        col3: props.invoice?.row2?.col3 || "",
-        style: {
-          fontSize: props.invoice?.row2?.style?.fontSize || 12,
-        },
-      },
-      row3: {
-        col1: props.invoice?.row3?.col1 || "",
-        col2: props.invoice?.row3?.col2 || "",
-        col3: props.invoice?.row3?.col3 || "",
-        style: {
-          fontSize: props.invoice?.row3?.style?.fontSize || 12,
-        },
-      },
-      row4: {
-        col1: props.invoice?.row4?.col1 || "",
-        col2: props.invoice?.row4?.col2 || "",
-        col3: props.invoice?.row4?.col3 || "",
-        style: {
-          fontSize: props.invoice?.row4?.style?.fontSize || 12,
-        },
-      },
-      row5: {
-        col1: props.invoice?.row5?.col1 || "",
-        col2: props.invoice?.row5?.col2 || "",
-        col3: props.invoice?.row5?.col3 || "",
-        style: {
-          fontSize: props.invoice?.row5.style?.fontSize || 12,
-        },
-      },
-      row6: {
-        col1: props.invoice?.row6?.col1 || "",
-        col2: props.invoice?.row6?.col2 || "",
-        col3: props.invoice?.row6?.col3 || "",
-        style: {
-          fontSize: props.invoice?.row6?.style?.fontSize || 12,
-        },
-      },
-      row7: {
-        col1: props.invoice?.row7?.col1 || "",
-        col2: props.invoice?.row7?.col2 || "",
-        col3: props.invoice?.row7?.col3 || "",
-        style: {
-          fontSize: props.invoice?.row7?.style?.fontSize || 12,
-        },
-      },
-      row8: {
-        col1: props.invoice?.row8?.col1 || "",
-        col2: props.invoice?.row8?.col2 || "",
-        col3: props.invoice?.row8?.col3 || "",
-        style: {
-          fontSize: props.invoice?.row8?.style?.fontSize || 12,
-        },
-      },
-      row9: {
-        col1: props.invoice?.row9?.col1 || "",
-        col2: props.invoice?.row9?.col2 || "",
-        col3: props.invoice?.row9?.col3 || "",
-        style: {
-          fontSize: props.invoice?.row9?.style?.fontSize || 12,
-        },
-      },
-      row10: {
-        col1: props.invoice?.row10?.col1 || "",
-        col2: props.invoice?.row10?.col2 || "",
-        col3: props.invoice?.row10?.col3 || "",
-        style: {
-          fontSize: props.invoice?.row10?.style?.fontSize || 12,
-        },
-      },
-    },
-    footer: {
-      text: props.footer?.text || "",
-    },
-    pageEnable: props.pageEnable || false,
-    pageLabel: props.pageLabel || "Page",
-  };
+  // const param = {
+  //   outputType: props.outputType || "save",
+  //   returnJsPDFDocObject: props.returnJsPDFDocObject || false,
+  //   fileName: props.fileName || "",
+  //   orientationLandscape: props.orientationLandscape || false,
+  //   logo: {
+  //     src: props.logo?.src || "",
+  //     width: props.logo?.width || "",
+  //     height: props.logo?.height || "",
+  //     margin: {
+  //       top: props.logo?.margin?.top || 0,
+  //       left: props.logo?.margin?.left || 0,
+  //     },
+  //   },
+  //   business: {
+  //     name: props.business?.name || "",
+  //     address: props.business?.address || "",
+  //     phone: props.business?.phone || "",
+  //     email: props.business?.email || "",
+  //     email_1: props.business?.email_1 || "",
+  //     website: props.business?.website || "",
+  //   },
+  //   contact: {
+  //     label: props.contact?.label || "",
+  //     name: props.contact?.name || "",
+  //     address: props.contact?.address || "",
+  //     phone: props.contact?.phone || "",
+  //     email: props.contact?.email || "",
+  //     otherInfo: props.contact?.otherInfo || "",
+  //   },
+  //   invoice: {
+  //     label: props.invoice?.label || "",
+  //     invTotalLabel: props.invoice?.invTotalLabel || "",
+  //     num: props.invoice?.num || "",
+  //     invDate: props.invoice?.invDate || "",
+  //     invGenDate: props.invoice?.invGenDate || "",
+  //     headerBorder: props.invoice?.headerBorder || false,
+  //     tableBodyBorder: props.invoice?.tableBodyBorder || false,
+  //     header: props.invoice?.header || [],
+  //     table: props.invoice?.table || [],
+  //     invTotal: props.invoice?.invTotal || "",
+  //     invCurrency: props.invoice?.invCurrency || "",
+  //     invDescLabel: props.invoice?.invDescLabel || "",
+  //     invDesc: props.invoice?.invDesc || "",
+  //     row1: {
+  //       col1: props.invoice?.row1?.col1 || "",
+  //       col2: props.invoice?.row1?.col2 || "",
+  //       col3: props.invoice?.row1?.col3 || "",
+  //       style: {
+  //         fontSize: props.invoice?.row1?.style?.fontSize || 12,
+  //       },
+  //     },
+  //     row2: {
+  //       col1: props.invoice?.row2?.col1 || "",
+  //       col2: props.invoice?.row2?.col2 || "",
+  //       col3: props.invoice?.row2?.col3 || "",
+  //       style: {
+  //         fontSize: props.invoice?.row2?.style?.fontSize || 12,
+  //       },
+  //     },
+  //     row3: {
+  //       col1: props.invoice?.row3?.col1 || "",
+  //       col2: props.invoice?.row3?.col2 || "",
+  //       col3: props.invoice?.row3?.col3 || "",
+  //       style: {
+  //         fontSize: props.invoice?.row3?.style?.fontSize || 12,
+  //       },
+  //     },
+  //     row4: {
+  //       col1: props.invoice?.row4?.col1 || "",
+  //       col2: props.invoice?.row4?.col2 || "",
+  //       col3: props.invoice?.row4?.col3 || "",
+  //       style: {
+  //         fontSize: props.invoice?.row4?.style?.fontSize || 12,
+  //       },
+  //     },
+  //     row5: {
+  //       col1: props.invoice?.row5?.col1 || "",
+  //       col2: props.invoice?.row5?.col2 || "",
+  //       col3: props.invoice?.row5?.col3 || "",
+  //       style: {
+  //         fontSize: props.invoice?.row5.style?.fontSize || 12,
+  //       },
+  //     },
+  //     row6: {
+  //       col1: props.invoice?.row6?.col1 || "",
+  //       col2: props.invoice?.row6?.col2 || "",
+  //       col3: props.invoice?.row6?.col3 || "",
+  //       style: {
+  //         fontSize: props.invoice?.row6?.style?.fontSize || 12,
+  //       },
+  //     },
+  //     row7: {
+  //       col1: props.invoice?.row7?.col1 || "",
+  //       col2: props.invoice?.row7?.col2 || "",
+  //       col3: props.invoice?.row7?.col3 || "",
+  //       style: {
+  //         fontSize: props.invoice?.row7?.style?.fontSize || 12,
+  //       },
+  //     },
+  //     row8: {
+  //       col1: props.invoice?.row8?.col1 || "",
+  //       col2: props.invoice?.row8?.col2 || "",
+  //       col3: props.invoice?.row8?.col3 || "",
+  //       style: {
+  //         fontSize: props.invoice?.row8?.style?.fontSize || 12,
+  //       },
+  //     },
+  //     row9: {
+  //       col1: props.invoice?.row9?.col1 || "",
+  //       col2: props.invoice?.row9?.col2 || "",
+  //       col3: props.invoice?.row9?.col3 || "",
+  //       style: {
+  //         fontSize: props.invoice?.row9?.style?.fontSize || 12,
+  //       },
+  //     },
+  //     row10: {
+  //       col1: props.invoice?.row10?.col1 || "",
+  //       col2: props.invoice?.row10?.col2 || "",
+  //       col3: props.invoice?.row10?.col3 || "",
+  //       style: {
+  //         fontSize: props.invoice?.row10?.style?.fontSize || 12,
+  //       },
+  //     },
+  //   },
+  //   footer: {
+  //     text: props.footer?.text || "",
+  //   },
+  //   pageEnable: props.pageEnable || false,
+  //   pageLabel: props.pageLabel || "Page",
+  // };
 
+  const param = props;
   const splitTextAndGetHeight = (text, size) => {
     var lines = doc.splitTextToSize(text, size);
     return {
