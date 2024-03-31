@@ -10,76 +10,6 @@ const OutputType = {
 };
 
 export { OutputType, jsPDF };
-
-/**
- *
- * @param { {
- *  outputType: OutputType | string,
- *  returnJsPDFDocObject?: boolean,
- *  fileName: string,
- *  orientationLandscape?: boolean,
- *  logo?: {
- *      src?: string,
- *      width?: number,
- *      height?: number,
- *      margin?: {
- *        top?: number,
- *        left?: number
- *      }
- *   },
- *   business?: {
- *       name?: string,
- *       address?: string,
- *       phone?: string,
- *       email?: string,
- *       email_1?: string,
- *       website?: string,
- *   },
- *   contact?: {
- *       label?: string,
- *       name?: string,
- *       address?: string,
- *       phone?: string,
- *       email?: string,
- *       otherInfo?: string,
- *   },
- *   invoice?: {
- *       label?: string,
- *       num?: number,
- *       invDate?: string,
- *       invGenDate?: string,
- *       headerBorder?: boolean,
- *       tableBodyBorder?: boolean,
- *       header?: string[],
- *       table?: any,
- *       invTotalLabel?: string,
- *       invTotal?: string,
- *       invCurrency?: string,
- *       invDescLabel?: string,
- *       invDesc?: string,
- *       row1?: {
- *           col1?: string,
- *           col2?: string,
- *           col3?: string,
- *           style?: {
- *               fontSize?: number
- *           }
- *       },
- *       row2?: {
- *           col1?: string,
- *           col2?: string,
- *           col3?: string,
- *           style?: {
- *               fontSize?: number
- *           }
- *       },
- *   },
- *   footer?: {
- *       text?: string,
- *   },
- *   pageEnable?: boolean,
- *   pageLabel?: string, } } props
- */
 function jsPDFInvoiceTemplate(props) {
   const param = {
     outputType: props.outputType || "save",
@@ -200,7 +130,7 @@ function jsPDFInvoiceTemplate(props) {
       row10: {
         col1: props.invoice?.row10?.col1 || "",
         col2: props.invoice?.row10?.col2 || "",
-        col3: props.invoice?.row10.col3 || "",
+        col3: props.invoice?.row10?.col3 || "",
         style: {
           fontSize: props.invoice?.row10?.style?.fontSize || 12,
         },
