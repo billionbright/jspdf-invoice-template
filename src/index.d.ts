@@ -176,6 +176,41 @@ declare function jsPDFInvoiceTemplate(props: {
                 };
             };
         };
+        row7?: {
+            col1?: string;
+            col2?: string;
+            col3?: string;
+            style?: {
+                fontSize?: number;
+            };
+        };
+
+        row8?: {
+            col1?: string;
+            col2?: string;
+            col3?: string;
+            style?: {
+                fontSize?: number;
+            };
+        };
+
+        row9?: {
+            col1?: string;
+            col2?: string;
+            col3?: string;
+            style?: {
+                fontSize?: number;
+            };
+        };
+
+        row10?: {
+            col1?: string;
+            col2?: string;
+            col3?: string;
+            style?: {
+                fontSize?: number;
+            };
+        };
     };
     footer?: {
         text?: string;

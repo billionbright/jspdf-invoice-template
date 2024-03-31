@@ -173,6 +173,38 @@ function jsPDFInvoiceTemplate(props) {
           fontSize: props.invoice?.row2?.style?.fontSize || 12,
         },
       },
+      row7: {
+        col1: props.invoice?.row1?.col1 || "",
+        col2: props.invoice?.row1?.col2 || "",
+        col3: props.invoice?.row1?.col3 || "",
+        style: {
+          fontSize: props.invoice?.row1?.style?.fontSize || 12,
+        },
+      },
+      row8: {
+        col1: props.invoice?.row2?.col1 || "",
+        col2: props.invoice?.row2?.col2 || "",
+        col3: props.invoice?.row2?.col3 || "",
+        style: {
+          fontSize: props.invoice?.row2?.style?.fontSize || 12,
+        },
+      },
+      row9: {
+        col1: props.invoice?.row1?.col1 || "",
+        col2: props.invoice?.row1?.col2 || "",
+        col3: props.invoice?.row1?.col3 || "",
+        style: {
+          fontSize: props.invoice?.row1?.style?.fontSize || 12,
+        },
+      },
+      row10: {
+        col1: props.invoice?.row2?.col1 || "",
+        col2: props.invoice?.row2?.col2 || "",
+        col3: props.invoice?.row2?.col3 || "",
+        style: {
+          fontSize: props.invoice?.row2?.style?.fontSize || 12,
+        },
+      },
     },
     footer: {
       text: props.footer?.text || "",
@@ -545,6 +577,70 @@ function jsPDFInvoiceTemplate(props) {
   }
   //end row6
 
+
+  //row7
+  if (
+    param.invoice.row7 &&
+    (param.invoice.row7.col1 ||
+      param.invoice.row7.col2 ||
+      param.invoice.row7.col3)
+  ) {
+    currentHeight += pdfConfig.lineHeight;
+    doc.setFontSize(param.invoice.row7.style.fontSize);
+
+    doc.text(docWidth / 1.5, currentHeight, param.invoice.row7.col1, "right");
+    doc.text(docWidth - 25, currentHeight, param.invoice.row7.col2, "right");
+    doc.text(docWidth - 10, currentHeight, param.invoice.row7.col3, "right");
+  }
+  //end row7
+
+  //row8
+  if (
+    param.invoice.row8 &&
+    (param.invoice.row8.col1 ||
+      param.invoice.row8.col2 ||
+      param.invoice.row8.col3)
+  ) {
+    currentHeight += pdfConfig.lineHeight;
+    doc.setFontSize(param.invoice.row8.style.fontSize);
+
+    doc.text(docWidth / 1.5, currentHeight, param.invoice.row8.col1, "right");
+    doc.text(docWidth - 25, currentHeight, param.invoice.row8.col2, "right");
+    doc.text(docWidth - 10, currentHeight, param.invoice.row8.col3, "right");
+  }
+  //end row8
+
+  //row9
+  if (
+    param.invoice.row9 &&
+    (param.invoice.row9.col1 ||
+      param.invoice.row9.col2 ||
+      param.invoice.row9.col3)
+  ) {
+    currentHeight += pdfConfig.lineHeight;
+    doc.setFontSize(param.invoice.row9.style.fontSize);
+
+    doc.text(docWidth / 1.5, currentHeight, param.invoice.row9.col1, "right");
+    doc.text(docWidth - 25, currentHeight, param.invoice.row9.col2, "right");
+    doc.text(docWidth - 10, currentHeight, param.invoice.row9.col3, "right");
+  }
+
+  //end row9
+
+  //row10
+  if (
+    param.invoice.row10 &&
+    (param.invoice.row10.col1 ||
+      param.invoice.row10.col2 ||
+      param.invoice.row10.col3)
+  ) {
+    currentHeight += pdfConfig.lineHeight;
+    doc.setFontSize(param.invoice.row10.style.fontSize);
+
+    doc.text(docWidth / 1.5, currentHeight, param.invoice.row10.col1, "right");
+    doc.text(docWidth - 25, currentHeight, param.invoice.row10.col2, "right");
+    doc.text(docWidth - 10, currentHeight, param.invoice.row10.col3, "right");
+  }
 
 
   if (param.orientationLandscape && currentHeight + invDescSize > 173) {
