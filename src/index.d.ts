@@ -151,31 +151,32 @@ declare function jsPDFInvoiceTemplate(props: {
             style?: {
                 fontSize?: number;
             };
-            row4?: {
-                col1?: string;
-                col2?: string;
-                col3?: string;
-                style?: {
-                    fontSize?: number;
-                };
-            };
-            row5?: {
-                col1?: string;
-                col2?: string;
-                col3?: string;
-                style?: {
-                    fontSize?: number;
-                };
-            };
-            row6?: {
-                col1?: string;
-                col2?: string;
-                col3?: string;
-                style?: {
-                    fontSize?: number;
-                };
+        };
+        row4?: {
+            col1?: string;
+            col2?: string;
+            col3?: string;
+            style?: {
+                fontSize?: number;
             };
         };
+        row5?: {
+            col1?: string;
+            col2?: string;
+            col3?: string;
+            style?: {
+                fontSize?: number;
+            };
+        };
+        row6?: {
+            col1?: string;
+            col2?: string;
+            col3?: string;
+            style?: {
+                fontSize?: number;
+            };
+        };
+
         row7?: {
             col1?: string;
             col2?: string;
