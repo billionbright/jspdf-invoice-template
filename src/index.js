@@ -252,7 +252,7 @@ function jsPDFInvoiceTemplate(props) {
   doc.setTextColor(colorBlack);
   doc.text(docWidth - 10, currentHeight, param.business.name, "right");
   doc.setFontSize(pdfConfig.fieldTextSize);
-
+  console.log("Params are", param);
   if (param.logo.src) {
     var imageHeader = new Image();
     imageHeader.src = param.logo.src;
